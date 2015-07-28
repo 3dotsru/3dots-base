@@ -277,3 +277,13 @@
      -moz-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
           box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
 }
+
+/**
+  Opacity mixin
+*/
+
+.opacity (@opacity: 0.5) {
+  -webkit-opacity: @opacity;
+     -moz-opacity: @opacity;
+          opacity: @opacity;
+}
