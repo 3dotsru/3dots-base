@@ -1,0 +1,167 @@
+/* framework */
+
+.bg(@image) {
+  background-image: url("../images/@{image}");
+}
+
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+
+.image-link(@image, @w, @h) {
+  display: block;
+  text-indent: -9999px;
+  .bg(@image);
+  .size(@w, @h);
+  border-bottom: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.pr {
+  position: relative;
+}
+
+.pa(@l: inherit, @t: inherit) {
+  left: @l;
+  top: @t;
+  position: absolute;
+}
+
+.p(@args: 0) {
+  padding: @args;
+}
+
+.m(@args: 0) {
+  margin: @args;
+}
+
+.fake-link {
+  border-bottom: 1px dashed;
+  white-space: nowrap;
+  text-decoration: none;
+  &:hover, &.active {
+    border-bottom-color: transparent;
+    text-decoration: none;
+  }
+}
+
+.clear-menu-first() {
+  margin-left: -0.5em;
+
+  @media (max-width: 768px) {
+    li a {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.ie7-inline-block() {
+  *display: inline;
+  *zoom: 1;
+}
+
+.ib {
+  display: inline-block;
+  .ie7-inline-block();
+}
+
+
+.link(@color: @link-color) {
+  color: @color;
+  text-decoration: none;
+  border-bottom: 1px solid desaturate(lighten(@color, 35%), 50%);
+
+  &:hover {
+    color: @color;
+    text-decoration: none;
+    border-bottom-color: desaturate(lighten(@color, 15%), 50%);
+  }
+}
+
+.simple-link(@color: @link-color) {
+  color: @color;
+  text-decoration: none;
+  border-bottom: 1px solid lighten(@color, 30%);
+
+  &:hover {
+    color: @color;
+    text-decoration: none;
+    border-bottom-color: @color;
+  }
+}
+
+
+.pre-y-0 {
+  padding-top: 0
+}
+
+.post-y-0 {
+  padding-bottom: 0
+}
+
+.pre-y(@val) {
+  padding-top: @val;
+}
+
+.post-y(@val) {
+  padding-bottom: @val
+}
+
+.em-suffix-eval(@val) when (@val > 0) {
+  .pre-y-@{val} {.pre-y(unit(@val, em))}
+  .post-y-@{val} {.post-y(unit(@val, em))}
+  .em-suffix-eval(@val - 1);
+}
+
+.em-suffix-eval(0) {}
+
+.em-suffix-eval(4);
+
+.pre-y-025 {
+  padding-top: .25em
+}
+
+.pre-y-05 {
+  padding-top: .5em
+}
+
+.pre-y-15 {
+  padding-top: 1.5em
+}
+
+.pre-y-25 {
+  padding-top: 2.5em
+}
+
+.pre-y-35 {
+  padding-top: 3.5em
+}
+
+.post-y-025 {
+  padding-bottom: .25em
+}
+
+.post-y-05 {
+  padding-bottom: .5em
+}
+
+.post-y-15 {
+  padding-bottom: 1.5em
+}
+
+.post-y-25 {
+  padding-bottom: 2.5em
+}
+
+.post-y-35 {
+  padding-bottom: 3.5em
+}
+
+.f-light{
+  color: @gray-light;
+}
