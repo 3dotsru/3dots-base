@@ -71,12 +71,15 @@
 }
 
 
-.link(@color: @link-color) {
+.link(@color: @link-color, @bg-color: @brand-primary) {
+  display: block;
+  background-color: @bg-color;
   color: @color;
   text-decoration: none;
   border-bottom: 1px solid desaturate(lighten(@color, 35%), 50%);
 
   &:hover {
+    background-color: darken(@bg-color, 15%);
     color: @color;
     text-decoration: none;
     border-bottom-color: desaturate(lighten(@color, 15%), 50%);
