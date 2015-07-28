@@ -303,6 +303,7 @@
   background:     -ms-linear-gradient(top, @startColor, @endColor);
   background:      -o-linear-gradient(top, @startColor, @endColor);
   background:         linear-gradient(top, @startColor, @endColor);
+  filter:             progid:DXImageTransform.Microsoft.gradient( startColorstr='lighten(@color, @coef)', endColorstr='darken(@color, @coef)',GradientType=0 ); /* IE6-9 */
 }
 .horizontal-gradient (@startColor: #eee, @endColor: white) {
   background-color: @startColor;
