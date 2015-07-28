@@ -232,3 +232,20 @@
        -o-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);
 }
+
+/**
+  Perspective mixin's (for transformed elem's)
+*/
+.perspective (@value: 1000) {
+  -webkit-perspective: @value;
+     -moz-perspective: @value;
+      -ms-perspective: @value;
+          perspective: @value;
+}
+.transform-origin (@x:center, @y:center) {
+  -webkit-transform-origin: @x @y;
+     -moz-transform-origin: @x @y;
+      -ms-transform-origin: @x @y;
+       -o-transform-origin: @x @y;
+          transform-origin: @x @y;
+}
