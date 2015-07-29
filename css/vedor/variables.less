@@ -3,6 +3,34 @@
 @font-family-base:  	"NotoSerifRegular", Helvetica, Arial, sans-serif;
 @font-family-aditional:	"Helvetica Neue", Helvetica, Arial, sans-serif;
 
+///**
+// * Font-face
+// *
+// * Easily include fonts on you website.
+// *
+// * @USAGE
+// * Put the .font-face() mixin in your CSS. Provide at least two arguments:
+// * -- font's name (string),
+// * -- font's filename (without filetype),
+// * -- font's path / URL (string) [don't forget to put the fonts in all formats in the folder].
+// *
+// * Optionally you can provide the font's weight and style. By default they're normal.
+// *
+// * Font's formats you need to use: EOT, WOFF, TTF and SVG.
+// **/
+
+.font-face(@name, @filename, @path, @weight:normal, @style:normal) {
+  @font-face {
+    font-family: @name;
+    src: url('@{path}@{filename}.eot');
+    src: local('?'), url('@{path}@{filename}.woff') format('woff'),
+         url('@{path}@{filename}.ttf') format('truetype'),
+         url('@{path}@{filename}.svg') format('svg');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
 @baseFontSize: 10px;
 
 @s-XXXL:	3.9rem;		/*39*/
