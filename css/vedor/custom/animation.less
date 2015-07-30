@@ -2,11 +2,11 @@
   Animation mixin's
 */
 
-.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
-  -webkit-animation: @name @duration @delay @ease;
-  -moz-animation: @name @duration @delay @ease;
-  -ms-animation: @name @duration @delay @ease;
-  animation: @name @duration @delay @ease;
+.animation (@name, @duration: 300ms, @delay: 0, @type: ease) {
+  -webkit-animation: @name @duration @delay @type;
+  -moz-animation: @name @duration @delay @type;
+  -ms-animation: @name @duration @delay @type;
+  animation: @name @duration @delay @type;
 }
 
 .transition (@transition) {
