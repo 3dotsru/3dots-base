@@ -24,11 +24,9 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?".$arResult["Nav
 <section class="row">
 	<div class="col-sm-9 col-sm-offset-2">
 		<ul class="pagination post-y-1 pull-left">
-			
 			<?if ($arResult["NavPageNomer"] > 1):?>
 				<li><a class="prev" href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=$arResult["NavPageNomer"]-1?>">&#60;</a></li>
 			<?endif?>
-
 			<?while($arResult["nStartPage"] <= $arResult["nEndPage"]):?>
 				<?if ($arResult["nStartPage"] == $arResult["NavPageNomer"]):?>
 					<li class="active" ><a><?=$arResult["nStartPage"]?></a></li>
