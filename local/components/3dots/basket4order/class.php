@@ -12,7 +12,14 @@ class CGoodBasket extends CBitrixComponent
 
     public function getBasketItems()
     {
-        //use /Bitrix
-    	
+
+    }
+
+    public function  isAjax(){
+        $isAjax = false;
+        if($isAjax){
+            return true;
+        }
+        return false;
     }
 };?>
